@@ -40,18 +40,14 @@
       transition="slide-x-transition"
     >
       <v-hover v-model="hover2">
-        <v-chip>ภาสติาติ.</v-chip>
+        <v-chip>ภาสิตาติ.</v-chip>
       </v-hover>
     </v-badge>
+      <v-chip v-for="word in story" :key="word.id">{{word.pali}}</v-chip>
       </v-row>
     </v-card-text>
     <v-card-text>
-(อันพระศาสดา) ตรัสแล้ว ในท่ีไหน ดังนี้ฯ
-(อ. อันตอบ ว่า อ. พระธรรมเทศนา นี้ อัน พระศาสดา ตรัสแล้ว)
-ในเมืองช่ือว่า สาวัต ถี (ดังนี้) ฯ
-(อ. อันถาม ว่า อ. พระธรรมเทศนา นี้ อันพระศาสดา)
-ทรงปรารภซึ่งใคร(ตรัสแล้วในเมืองชื่อว่าสาวตัถี)ดังนี้ฯ (อ.อันตอบว่าอ.พระธรรมเทศนานี้อันพระศาสดา ทรงปรารภ)ซึ่งพระเถระชื่อว่าจกัขบุาล(ตรัสแล้วในเมืองช่ือว่า
-สาวัตถีดงันี้) ฯ
+ได้ยินว่า(อ.เศรษฐี)ชื่อว่ามหาสุวรรณเป็นผู้มีขุมทรัพย์ เป็นผู้มั่งคั่ง เป็นผู้มีทรัพย์มาก เป็นผู้มีโภคมาก เป็นผู้มีบุตรหามิได้ ได้มีแล้ว ในเมืองชื่อว่า สาวัติถี ฯ
     </v-card-text>
 <!--     <v-card-actions>
       <v-btn
@@ -73,13 +69,30 @@ export default {
   data: () => ({
     loading: false,
     hover1: false,
-    hover2: false
+    hover2: false,
+    story: []
   }),
+  mounted: function () {
+    this.fetchStory()
+  },
   methods: {
     reserve () {
       this.loading = true
 
       setTimeout(() => (this.loading = false), 2000)
+    },
+    fetchStory () {
+      // this.story = []
+      // this.story = await fetch('https://sheet.best/api/sheets/433218c4-6b0a-41ce-9fab-280bebce3abf/tabs/db/search?story=1&wak=1&pak=1&paragraph=3')
+      fetch('https://sheet.best/api/sheets/433218c4-6b0a-41ce-9fab-280bebce3abf/tabs/db/search?story=1&wak=1&pak=1&paragraph=3')
+        .then((response) => response.json())
+        .then((data) => {
+          console.log(data)
+          this.story = data
+        })
+        .catch((error) => {
+          console.error(error)
+        })
     }
   }
 }
