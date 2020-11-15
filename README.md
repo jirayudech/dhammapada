@@ -22,3 +22,6 @@ https://sheet.best/api/sheets/433218c4-6b0a-41ce-9fab-280bebce3abf/tabs/db/searc
 
 # โปรแกรมตัวอย่าง (Demo)
 https://jirayudech.github.io/dhammapada/#/
+
+# Code Repository
+https://github.com/jirayudech/dhammapada/tree/dev
