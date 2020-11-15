@@ -30,6 +30,9 @@ https://jirayudech.github.io/dhammapada/#/
 Webclient Front-End ใช้ VueJs พัฒนา ท่านที่ถนัด VueJS สามารถเข้าร่วมพัฒนาได้ครับ
 https://github.com/jirayudech/dhammapada/tree/dev
 
+# เทคโนโลยีที่ใช้
+โครงการนี้เป็น Severless ใช้ Github เป็น Front-End Server และใช้ Google Sheet เป็น Database ใช้ Sheet.best เป็น API Server
+
 # สิ่งที่ต้องทำ (Todo)
 รายการสิ่งที่ต้องทำ ท่านสามารถเข้าร่วมพัฒนาธรรมบทออนไลน์ได้ โดยเข้าไปเลือกรายการสิ่งที่ต้องทำ ที่ท่านสามารถทำได้ในลิงก์นี้ครับ
 https://github.com/jirayudech/dhammapada/projects/1
