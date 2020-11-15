@@ -28,3 +28,8 @@ https://jirayudech.github.io/dhammapada/#/
 
 # Code Repository
 https://github.com/jirayudech/dhammapada/tree/dev
+
+# สิ่งที่ต้องทำ (Todo)
+รายการสิ่งที่ต้องทำ ท่านสามารถเข้าร่วมพัฒนาธรรมบทออนไลน์ได้ โดยเข้าไปเลือกรายการสิ่งที่ต้องทำ ที่ท่านสามารถทำได้ในลิงก์นี้ครับ
+https://github.com/jirayudech/dhammapada/projects/1
+
