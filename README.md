@@ -26,7 +26,8 @@ https://sheet.best/api/sheets/433218c4-6b0a-41ce-9fab-280bebce3abf/tabs/db/searc
 # โปรแกรมตัวอย่าง (Demo)
 https://jirayudech.github.io/dhammapada/#/
 
-# Code Repository
+# Front-End Code Repository
+Webclient Front-End ใช้ VueJs พัฒนา ท่านที่ถนัด VueJS สามารถเข้าร่วมพัฒนาได้ครับ
 https://github.com/jirayudech/dhammapada/tree/dev
 
 # สิ่งที่ต้องทำ (Todo)
