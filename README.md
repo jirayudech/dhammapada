@@ -17,7 +17,7 @@ https://docs.google.com/spreadsheets/d/1mmZmVch1EQDV0vNDKu_pDiTP2QkgqQxCspFx8JAk
 https://sheet.best/api/sheets/433218c4-6b0a-41ce-9fab-280bebce3abf/tabs/db/search?story=1&wak=1&pak=1&paragraph=3 
 
 # UI/UX 
-- Hover แล้วแสดงคำแปลโดยพยัญชนะภาษาไทย และ บทวิเคราะห์การสร้างคำ เช่น รูปของวิภัตของคำนั้นๆเป็นต้น
+- Hover แล้วแสดงคำแปลโดยพยัญชนะภาษาไทย และ บทวิเคราะห์การสร้างคำ เช่น รูปของวิภัติของคำนั้นๆเป็นต้น
 - มีคำแปลโดยพยัญชนะเต็มสำหรับแต่ละย่อหน้าแสดงอยู่ด้านล่างของเนื้อหาภาษาบาลี 
 
 <img src="https://github.com/jirayudech/dhammapada/blob/main/Screen%20Shot%202563-11-15%20at%2016.48.49.png">(ภาพตัวอย่าง UI/UX เฟส๑)
