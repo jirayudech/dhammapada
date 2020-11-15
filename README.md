@@ -20,6 +20,9 @@ https://sheet.best/api/sheets/433218c4-6b0a-41ce-9fab-280bebce3abf/tabs/db/searc
 - Hover แล้วแสดงคำแปลโดยพยัญชนะภาษาไทย และ บทวิเคราะห์การสร้างคำ เช่น รูปของวิภัตของคำนั้นๆเป็นต้น
 - มีคำแปลโดยพยัญชนะเต็มสำหรับแต่ละย่อหน้าแสดงอยู่ด้านล่างของเนื้อหาภาษาบาลี 
 
+[<img src="https://github.com/jirayudech/dhammapada/blob/main/Screen%20Shot%202563-11-15%20at%2016.48.49.png">](ภาพตัวอย่าง UI/UX เฟส๑)
+
+
 # โปรแกรมตัวอย่าง (Demo)
 https://jirayudech.github.io/dhammapada/#/
 
