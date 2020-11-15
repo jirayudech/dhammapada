@@ -82,9 +82,7 @@ export default {
       setTimeout(() => (this.loading = false), 2000)
     },
     fetchStory () {
-      // this.story = []
-      // this.story = await fetch('https://sheet.best/api/sheets/433218c4-6b0a-41ce-9fab-280bebce3abf/tabs/db/search?story=1&wak=1&pak=1&paragraph=3')
-      fetch('https://sheet.best/api/sheets/433218c4-6b0a-41ce-9fab-280bebce3abf/tabs/db/search?story=1&wak=1&pak=1&paragraph=3')
+      fetch('https://sheet.best/api/sheets/433218c4-6b0a-41ce-9fab-280bebce3abf/tabs/db_word/search?story=1&wak=1&pak=1&paragraph=3')
         .then((response) => response.json())
         .then((data) => {
           console.log(data)
