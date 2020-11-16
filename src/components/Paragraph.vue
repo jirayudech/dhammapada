@@ -1,9 +1,10 @@
 <template>
-  <v-card
+  <div>
+<!--   <v-card
     :loading="loading"
     class="mx-auto my-12"
     max-width="800"
-  >
+  > -->
     <template slot="progress">
       <v-progress-linear
         color="deep-purple"
@@ -12,24 +13,24 @@
       ></v-progress-linear>
     </template>
 
-    <v-img
-      height="250"
-      src="https://i.ytimg.com/vi/12_VDwh25Qw/maxresdefault.jpg"
-    ></v-img>
-
-    <v-card-title>๑. จกฺขุปาลตฺเถรวตฺถุ.</v-card-title>
-
-    <v-card-text>
+      <v-card-text>
       <v-row>
-        <Paragraph
-          v-for="para in paragraphs"
-          :key="para.id"
-          :story="para.story"
-          :wak="para.wak"
-          :pak="para.pak"
-          :paragraph="para.paragraph"
-          :thai="para.thai"/>
+<!--     <v-badge
+      :value="hover2"
+      color="deep-purple accent-4"
+      content="ตรัสแล้ว"
+      right
+      transition="slide-x-transition"
+    >
+      <v-hover v-model="hover2">
+        <v-chip>ภาสิตาติ.</v-chip>
+      </v-hover>
+    </v-badge> -->
+      <v-chip v-for="word in words" :key="word.id">{{word.pali}}</v-chip>
       </v-row>
+    </v-card-text>
+    <v-card-text>
+      {{thai}}
     </v-card-text>
 <!--     <v-card-actions>
       <v-btn
@@ -40,31 +41,29 @@
         Reserve
       </v-btn>
     </v-card-actions> -->
-  </v-card>
+<!--   </v-card> -->
+  <v-divider></v-divider>
+  </div>
 </template>
 <script>
-import Paragraph from '@/components/Paragraph.vue'
-
 export default {
-  name: 'Story',
-  components: {
-    Paragraph
-  },
+  name: 'Paragraph',
   props: {
     title: String,
-    pak: Number,
-    wak: Number,
-    story: Number
+    story: String,
+    wak: String,
+    pak: String,
+    paragraph: String,
+    thai: String
   },
   data: () => ({
     loading: false,
     hover1: false,
     hover2: false,
-    paragraphs: []
+    words: []
   }),
   mounted: function () {
-    console.log('pak:' + this.title)
-    this.fetchParagraph(1, 1, 1)
+    this.fetchStory(this.pak, this.wak, this.story, this.paragraph)
   },
   methods: {
     reserve () {
@@ -72,13 +71,12 @@ export default {
 
       setTimeout(() => (this.loading = false), 2000)
     },
-    fetchParagraph (pak, wak, story) {
-      console.log(`https://sheet.best/api/sheets/433218c4-6b0a-41ce-9fab-280bebce3abf/tabs/db_paragraph/search?story=${story}&wak=${wak}&pak=${pak}`)
-      fetch(`https://sheet.best/api/sheets/433218c4-6b0a-41ce-9fab-280bebce3abf/tabs/db_paragraph/search?story=${story}&wak=${wak}&pak=${pak}`)
+    fetchStory (pak, wak, story, paragraph) {
+      fetch(`https://sheet.best/api/sheets/433218c4-6b0a-41ce-9fab-280bebce3abf/tabs/db_word/search?story=${story}&wak=${wak}&pak=${pak}&paragraph=${paragraph}`)
         .then((response) => response.json())
         .then((data) => {
           console.log(data)
-          this.paragraphs = data
+          this.words = data
         })
         .catch((error) => {
           console.error(error)
