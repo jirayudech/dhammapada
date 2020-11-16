@@ -1,10 +1,5 @@
 <template>
   <div>
-<!--   <v-card
-    :loading="loading"
-    class="mx-auto my-12"
-    max-width="800"
-  > -->
     <template slot="progress">
       <v-progress-linear
         color="deep-purple"
@@ -13,36 +8,26 @@
       ></v-progress-linear>
     </template>
 
-      <v-card-text>
-      <v-row>
-    <v-badge
-      v-for="(word, index) in words" :key="index"
-      :value="hover[index]"
-      color="deep-purple accent-4"
-      :content="word.thai"
-      right
-      transition="slide-x-transition"
-    >
-      <v-hover v-model="hover[index]">
-        <v-chip>{{word.pali}}</v-chip>
-      </v-hover>
-    </v-badge>
-<!--       <v-chip v-for="word in words" :key="word.id">{{word.pali}}</v-chip> -->
-      </v-row>
+    <v-card-text>
+    <v-row>
+      <v-badge
+        v-for="(word, index) in words" :key="index"
+        :value="hover[index]"
+        color="deep-purple accent-4"
+        :content="word.thai"
+        offset-x="50"
+        offset-y="-10"
+        transition="slide-x-transition"
+      >
+        <v-hover v-model="hover[index]">
+          <v-chip >{{word.pali}}</v-chip>
+        </v-hover>
+      </v-badge>
+    </v-row>
     </v-card-text>
     <v-card-text>
       {{thai}}
     </v-card-text>
-<!--     <v-card-actions>
-      <v-btn
-        color="deep-purple lighten-2"
-        text
-        @click="reserve"
-      >
-        Reserve
-      </v-btn>
-    </v-card-actions> -->
-<!--   </v-card> -->
   <v-divider></v-divider>
   </div>
 </template>
