@@ -15,18 +15,19 @@
 
       <v-card-text>
       <v-row>
-<!--     <v-badge
-      :value="hover2"
+    <v-badge
+      v-for="(word, index) in words" :key="index"
+      :value="hover[index]"
       color="deep-purple accent-4"
-      content="ตรัสแล้ว"
+      :content="word.thai"
       right
       transition="slide-x-transition"
     >
-      <v-hover v-model="hover2">
-        <v-chip>ภาสิตาติ.</v-chip>
+      <v-hover v-model="hover[index]">
+        <v-chip>{{word.pali}}</v-chip>
       </v-hover>
-    </v-badge> -->
-      <v-chip v-for="word in words" :key="word.id">{{word.pali}}</v-chip>
+    </v-badge>
+<!--       <v-chip v-for="word in words" :key="word.id">{{word.pali}}</v-chip> -->
       </v-row>
     </v-card-text>
     <v-card-text>
@@ -58,12 +59,16 @@ export default {
   },
   data: () => ({
     loading: false,
-    hover1: false,
+    hover: [],
     hover2: false,
     words: []
   }),
   mounted: function () {
     this.fetchStory(this.pak, this.wak, this.story, this.paragraph)
+    let i
+    for (i = 0; i < 100; i++) {
+      this.hover[i] = false
+    }
   },
   methods: {
     reserve () {
